@@ -9,10 +9,19 @@ body {
 }
 
 #main {
-  padding: 0px;
+  padding: 0;
   box-sizing: border-box;
-  width: 60%;
-  height: 100%;
+  width: 55vw;
+  height: 100vh;
+}
+
+#intro {
+  text-align: center;
+  padding: 0 5px;
+}
+
+#empty-message {
+  text-align: center;
 }
 
 #movie-list {
@@ -30,13 +39,22 @@ body {
   color: #880E4F;
 }
 
+#movie-list li:hover {
+  background: #880E4F;
+  color: #fff;
+}
+
 form {
   background: #fff;
   padding: 20px;
   position: fixed;
-  left: 0;
+  right: 0;
   bottom: 0;
-  width: 400px;
+  width: 42vw;
+  height: 24vh;
+  box-sizing: border-box;
+  overflow: auto;
+  box-shadow: -2px -3px 5px rgba(0, 0, 0, 0.3);
 }
 
 form .field {
@@ -73,12 +91,66 @@ form button {
   position: fixed;
   top: 0;
   right: 0;
-  width: 40%;
-  height: 100%;
+  width: 42vw;
+  height: 76vh;
   background: #AD1457;
   padding: 30px;
   overflow: auto;
   box-shadow: -2px -3px 5px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   color: #fff;
+  font-size: 1.2em;
+}
+
+#movie-details li {
+  line-height: 1.5em;
+}
+
+.movie-details-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.movie-details-header h2 {
+  padding-right: 20px;
+}
+
+.movie-details-header img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-filter: invert(95%) sepia(2%) saturate(7006%) hue-rotate(187deg) brightness(133%) contrast(65%);
+  filter: invert(95%) sepia(2%) saturate(7006%) hue-rotate(187deg) brightness(133%) contrast(65%);
+}
+
+@media (max-width: 1000px) {
+  form {
+    width: 100vw;
+  }
+
+  #main {
+    height: 76vh;
+    overflow: auto;
+  }
+}
+
+@media (max-height: 550px) {
+  form {
+    height: 28vh;
+  }
+
+  #main {
+    height: 72vh;
+  }
+}
+
+@media (max-width: 600px) {
+  #main {
+    font-size: 0.75em;
+  }
+
+  #add-movie {
+    font-size: initial;
+  }
 }

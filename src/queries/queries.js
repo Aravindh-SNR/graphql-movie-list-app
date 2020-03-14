@@ -21,10 +21,9 @@ query {
 `);
 
 export const ADD_MOVIE = gql(`
-mutation ($title: String!, $genre: String!, $directorId: ID!) {
-    addMovie (title: $title, genre: $genre, directorId: $directorId) {
-        id,
-        title
+mutation ($title: String!, $year: Int!, $directorId: ID!) {
+    addMovie (title: $title, year: $year, directorId: $directorId) {
+        id
     }
 }
 `);
@@ -34,16 +33,20 @@ query ($id: ID) {
     movie (id: $id) {
         id,
         title,
-        genre,
+        year,
         director {
-            id,
             name,
-            age
             movies {
                 id
                 title
             }
         }
     }
+}
+`);
+
+export const DELETE_MOVIE = gql(`
+mutation ($id: ID!) {
+    deleteMovie (id: $id)
 }
 `);

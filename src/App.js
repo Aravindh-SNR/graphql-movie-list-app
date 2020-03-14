@@ -8,14 +8,15 @@ import AddMovie from './components/AddMovie';
 
 // Apollo Client Setup
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'https://fast-stream-92697.herokuapp.com/graphql'
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
       <div id='main'>
-        <h1>My Movie Watchlist</h1>
+        <h1>Marvel Movie List</h1>
+        <p id='intro'>The Marvel Cinematic Universe needs your help to become complete. Can you do it?</p>
         <MovieList />
         <AddMovie />
       </div>
