@@ -8,7 +8,7 @@ import AddMovie from './components/AddMovie';
 
 // Apollo Client Setup
 const client = new ApolloClient({
-  uri: 'https://fast-stream-92697.herokuapp.com/graphql'
+  uri: 'https://movie-list-app-server.herokuapp.com/graphql'
 });
 
 function App() {
