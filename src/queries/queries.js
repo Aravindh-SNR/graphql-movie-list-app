@@ -6,7 +6,14 @@ export const GET_MOVIES = gql(`
 query {
     movies {
         id,
-        title
+        title,
+        director {
+            name,
+            movies {
+                id
+                title
+            }
+        }
     }
 }
 `);
